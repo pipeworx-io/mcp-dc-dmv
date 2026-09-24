@@ -1,11 +1,19 @@
 interface McpToolDefinition {
   name: string;
   description: string;
+  /** Human-facing one-liner (fleet #1967). Optional; consumers fall back to
+   *  description. Kept in step with shared/src/types.ts — scripts/lib/
+   *  check-inlined-types.mjs reports drift at publish time. */
+  summary?: string;
   inputSchema: {
     type: 'object';
     properties: Record<string, unknown>;
     required?: string[];
+    anyOf?: Array<{ required: string[] }>;
+    oneOf?: Array<{ required: string[] }>;
+    allOf?: Array<{ required: string[] }>;
   };
+  outputSchema?: Record<string, unknown>;
 }
 
 interface McpToolExport {
@@ -298,8 +306,6 @@ function govJoinHours(parts: Array<[string, unknown]>): string | null {
     .map(([day, v]) => `${day} ${String(v).trim()}`);
   return out.length ? out.join('; ') : null;
 }
-
-
 /**
  * District of Columbia DMV MCP — DMV service centers, the record-level vehicle-inspection
  * file, and traffic-conviction records. Keyless.
