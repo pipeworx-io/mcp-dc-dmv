@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-dc-dmv",
-  "version": "0.1.1",
-  "description": "District of Columbia DMV MCP — DMV service centers, the record-level vehicle-inspection",
+  "version": "0.2.0",
+  "description": "District of Columbia DMV MCP — DMV service centers, the record-level vehicle-inspection file, and traffic-conviction records. Keyless.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-dc-dmv": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "dc-dmv"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-dc-dmv.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/dc-dmv",
   "pipeworx": {
-    "sourceHash": "v1-f3aadb4255d712c90479b4f2730af1a9dfbd963d0fae272f49a69cc6191d1b43",
-    "sourceCommit": "839ab210d969ef7f822cd747ea516f6bb49e9231"
+    "mode": "gateway",
+    "slug": "dc-dmv",
+    "gatewaySlug": "dc-dmv",
+    "sourceHash": "v1-69d7d7df8042cd5b964b8a26365770abfe41d4da8dc18925177de177039e70c2",
+    "sourceCommit": "0b3faaa4d85299a961dd86dea75a0f0e1dad280c"
   }
 }
