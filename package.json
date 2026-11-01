@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-dc-dmv",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "District of Columbia DMV MCP — DMV service centers, the record-level vehicle-inspection file, and traffic-conviction records. Keyless.",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "dc-dmv",
     "gatewaySlug": "dc-dmv",
-    "sourceHash": "v1-69d7d7df8042cd5b964b8a26365770abfe41d4da8dc18925177de177039e70c2",
-    "sourceCommit": "0b3faaa4d85299a961dd86dea75a0f0e1dad280c"
+    "sourceHash": "v1-fdd62dd1b09b73eec6f62eac07442f5c82e01041ff13039af9f6f80ae28b393e",
+    "sourceCommit": "e707a4bb6209f432984c0a83bf64b3138130db89"
   }
 }
